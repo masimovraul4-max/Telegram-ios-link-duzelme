@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      // Əgər TikTok-un daxili brauzeridirsə, çıxmaq üçün yeni pəncərə açırıq
+      const link = "https://t.me/+YhciChwZpilhOTJk";
+
+      function redirect() {
+        const ua = navigator.userAgent || navigator.vendor || window.opera;
+        const isTikTok = ua.includes("TikTok");
+
+        if (isTikTok) {
+          window.location.href = "https://www.google.com";
+          setTimeout(() => {
+            window.open(link, "_blank");
+          }, 1000);
+        } else {
+          window.location.href = link;
+        }
+      }
+
+      window.onload = redirect;
+    </script>
+  </head>
+  <body>
+    <p>Zəhmət olmasa gözləyin, yönləndirilirsiniz...</p>
+  </body>
+</html>
